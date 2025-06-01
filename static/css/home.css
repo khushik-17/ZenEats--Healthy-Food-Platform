@@ -1,0 +1,675 @@
+
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #ff4c4c;
+    --secondary: #e71d36;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+
+
+
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+  }
+
+/* Header Section */
+.header {
+    background: linear-gradient(90deg, #FF4E50, #FC913A);
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 26px;
+    color: white;
+}
+
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 15px;
+}
+
+a.nav-item {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+a.nav-item:hover,
+a.nav-item.active {
+    background-color: #FF715B;
+}
+
+/* Welcome section */
+.Welcome {
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    padding: 40px; /* Adds spacing */
+    flex-wrap: wrap; /* Ensures proper alignment on smaller screens */
+}
+
+.Welcome-photo {
+    flex: 1; /* Ensures the image takes proportional space */
+    text-align: center; /* Centers the image in its container */
+    padding: 10px; /* Adds spacing */
+}
+
+.Welcome-photo img {
+    max-width: 100%; /* Makes the image responsive */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 8px; /* Optional: adds rounded corners */
+}
+
+.Welcome-content {
+    flex: 1; /* Ensures the text content takes proportional space */
+    text-align: left; /* Aligns the text to the left */
+    padding: 50px; /* Adds spacing */
+}
+
+.row {
+    max-width: 1200px; /* Controls the maximum width of the content */
+    margin: auto; /* Centers the row within the container */
+    display: flex;
+    flex-wrap: nowrap; /* Prevents wrapping to keep content and image adjacent */
+}
+
+.Welcome h3 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #333; /* Change to preferred text color */
+}
+
+.Welcome p {
+    line-height: 1.6;
+    color: #555; /* Change to preferred text color */
+    margin: 10px 0;
+    margin-top: 25px;
+}
+
+/* Features */
+.features {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #cbc7c7;
+}
+
+.features h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.features-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+    margin: 20px;
+}
+
+.feature-item img {
+    max-width: 80px;
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.feature-item p {
+    color: #777;
+    line-height: 1.5;
+}
+
+/*  Popular  Recipes Section Styling */
+.popular-recipes {
+    padding: 50px 20px;
+    background-color: #f8f8f8; /* Light background for contrast */
+    text-align: center;
+}
+
+.popular-recipes h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333; /* Dark text color */
+}
+
+/* Grid Layout */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ensures flexible sizing */
+    grid-auto-flow: column; /* Aligns all items in a single row */
+    gap: 20px; /* Space between cards */
+    overflow-x: auto; /* Enables horizontal scrolling if the content exceeds the container width */
+    max-width: 100%; /* Allows the grid to take full width */
+    padding: 10px;
+    margin: 0 auto;
+    scroll-behavior: smooth; /* Adds smooth scrolling effect */
+    white-space: nowrap; /* Prevents wrapping of the grid items */
+}
+
+/* Recipe Card Styling */
+.recipe-card {
+    background: #fff; /* White card background */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block; /* Ensures each card stays inline for the single-row layout */
+    min-width: 350px; /* Sets a fixed width for each card */
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px); /* Hover effect */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 300px; /* Adjusted height for better visibility in single-row layout */
+    object-fit: cover;
+}
+
+.recipe-card h3 {
+    font-size: 1.5em;
+    margin: 15px 10px 10px;
+    color: #555; /* Slightly darker text */
+}
+
+.recipe-card p {
+    margin: 0 10px 20px;
+    font-size: 1em;
+    color: #777; /* Subtle text color */
+}
+
+/* Button Styling */
+.recipe-card .btn {
+    display: inline-block;
+    margin: 0 10px 20px;
+    padding: 10px 15px;
+    font-size: 1em;
+    color: #fff;
+    background: #ff5722; /* Vibrant button color */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.recipe-card .btn:hover {
+    background: #e64a19; /* Darker button shade on hover */
+}
+
+
+
+
+/* Image Slider */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    animation: slide 15s infinite; /* 3 images x 5s = 15s total */
+}
+
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+    position: relative; /* To position content inside the slide */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+
+}
+
+.slide .content {
+    position: absolute;
+    top: 37%; /* Vertical center */
+    left: 20%; /* Moves content towards the middle-left of the slide */
+    transform: translate(-50%, -50%); /* Centers content based on its size */
+    text-align: left; /* Aligns text to the left */
+    color: white;
+    z-index: 2;
+    margin-left: 20px;
+}
+
+.content h1 {
+    font-size: 4rem; /* Bigger headline for emphasis */
+    font-weight: bold; /* Bold for better readability */
+    color: #ffeb3b; /* A vibrant color for the headline */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8); /* Glow effect */
+    margin-bottom: 1rem;
+    line-height: 1.2;/* Slightly tighter line height */
+    font-family: 'Poppins', sans-serif;
+}
+
+.content p {
+    font-size: 1.5rem; /* Larger font for paragraph text */
+    color: #ffffff; /* White for a clean look */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Subtle shadow for depth */
+    margin-bottom: 2rem; /* Space below the paragraph */
+    line-height: 1.6; /* Improve text readability */
+    max-width: 500px; /* Prevent text from being too wide */
+    font-family: 'Roboto', sans-serif;
+}
+
+.content button {
+    padding: 1rem 2rem; /* Larger buttons for emphasis */
+    font-size: 1.2rem; /* Bigger text for the buttons */
+    font-weight: bold; /* Bold for clarity */
+    color: white; /* White text */
+    background: linear-gradient(45deg, #ff5722, #e91e63); /* Attractive gradient */
+    border: none;
+    border-radius: 50px; /* Smooth pill shape */
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    margin-right: 10px;
+}
+
+.content button:hover {
+    transform: scale(1.1); /* Slightly larger on hover */
+    background: linear-gradient(45deg, #e91e63, #ff5722); /* Reverse gradient */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+}
+
+/* Keyframes for sliding animation */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    33.33% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    83.33% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+h2 {
+    text-align: center; /* Centers the text horizontally */
+    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: bold; /* Makes the text bold */
+    margin: 20px 0; /* Adds spacing above and below */
+    color: #333; /* Adjust the color as needed */
+}
+
+
+/* ---------------  Grid layout  (of home page)--------------------------*/
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);          /* 4 images will fit in that grid layout */
+    gap: 20px;
+    padding: 180px 20px 20px 20px;
+    }
+
+/* Button style */
+.button-container {
+    text-align: center;
+    margin-top: 10px;
+    }
+    .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    }
+
+    .button:hover {
+        background-color: #45a049;
+    }
+
+/* Back Button*/
+.back-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}
+
+/* Video Styling */
+/* General Styling */
+
+.video {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Text Content Styling */
+.text-content {
+    flex: 1;
+    max-width: 40%;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.text-content .title-style {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.text-content p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #555;
+    margin-top: 15px;
+}
+.video-section {
+    flex: 1;
+    max-width: 50%;
+    text-align: center;
+    position: relative;
+    margin-right: 40px;
+}
+
+.video-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    cursor: pointer;
+}
+
+.video-image {
+    width: 140%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+
+}
+
+.video-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 15px;
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.video-play-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ff0000;
+}
+
+.hidden-video {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#video-frame {
+    width: 80%;
+    height: 60%;
+    border: none;
+    border-radius: 8px;
+}
+
+.close-video {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.close-video:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-content,
+    .video-section {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    #video-frame {
+        width: 95%;
+        height: 50vh;
+    }
+}
+
+
+/* Footer Styling */
+/* Footer Container */
+.footer-container {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent dark overlay for better readability */
+    background-image: url('https://images.unsplash.com/photo-1447078806655-40579c2520d6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Add your image URL here */
+    background-size: cover; /* Ensures the image covers the entire footer */
+    background-position: center; /* Centers the image */
+    color: #fff; /* White text */
+    padding: 40px 20px;
+    text-align: center;
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+}
+
+/* Other Styles (No change needed for the rest of the code) */
+.footer-middle {
+    margin-bottom: 30px; /* Space between sections */
+}
+
+.footer-middle h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #ff5722; /* Vibrant heading color */
+}
+
+.footer-middle p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #aaa;
+}
+
+.subscription-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.subscription-form input {
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+}
+
+.subscription-form button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ff5722; /* Vibrant button color */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.subscription-form button:hover {
+    background-color: #e64a19; /* Darker button color on hover */
+}
+
+/* Social Icons Section */
+.footer-right h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #ff5722;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    font-size: 1.5em;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff5722;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #aaa; /* Subtle text color */
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+

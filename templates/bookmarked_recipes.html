@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarked Recipes</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    .recipe-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.recipe-card a:hover h2 {
+    color: #ff6347; /* Highlight on hover */
+}
+
+</style>
+</head>
+<body>
+    <!-- Header Section -->
+<header class="header">
+    <nav class="navbar">
+        <!-- Brand Logo -->
+        <a class="navbar-brand" href="home.html">
+            <img src="{% static 'images/logo.jpg' %}" class="custom-logo" alt="ZenEats Logo"> <span>ZenEats</span>
+        </a>
+
+        <!-- MENU -->
+        <div class="nav-menu">
+            <a href="{% url 'home' %}" class="nav-item">Home</a>
+        <a href="{% url 'recipes' %}" class="nav-item">Recipes</a>
+        <a href="{% url 'aboutus' %}" class="nav-item">About Us</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'bookmarked_recipes' %}" class="nav-item">Bookmarked Recipes</a>
+        <a href="{% url 'logout' %}" class="nav-item">Sign Out</a>
+        {% else %}
+        <a href="{% url 'login' %}" class="nav-item">Login</a>
+        {% endif %}
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Your Bookmarked Recipes</h1>
+    <div class="recipes">
+        {% for bookmark in bookmarks %}
+        <div class="recipe-card" id="recipe-{{ bookmark.recipe.id }}">
+            <!-- Wrap image in anchor tag -->
+            <a href="/static/static_recipes/{{ bookmark.recipe.slug }}.html">
+                <img src="{{ bookmark.recipe.image.url }}" alt="{{ bookmark.recipe.title }}">
+            </a>
+            <div class="recipe-info">
+                <!-- Wrap title in anchor tag -->
+                <a href="/static/static_recipes/{{ bookmark.recipe.slug }}.html">
+                    <h2>{{ bookmark.recipe.title }}</h2>
+                </a>
+                <p>{{ bookmark.recipe.description }}</p>
+            </div>
+            <button class="bookmark-btn" data-recipe-id="{{ bookmark.recipe.id }}">
+                <i class="fas fa-bookmark bookmark-icon" id="bookmark-icon-{{ bookmark.recipe.id }}"></i>
+            </button>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

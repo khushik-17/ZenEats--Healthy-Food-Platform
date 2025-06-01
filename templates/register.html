@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - ZenEats</title>
+    <style>
+        body {
+            font-family: 'Arial, sans-serif';
+            background: url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #4d4d4d;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #e67e22;
+            text-align: center;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        h3 {
+            color: #e74c3c;
+            text-align: center;
+            font-size: 1.1em;
+            margin: 5px 0 15px;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        form p {
+            font-size: 1.2em;
+            color: #333;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #e67e22;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #d35400;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d35400;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Sign Up Below</h1>
+        {% for message in messages %}
+        <h3>{{ message }}</h3>
+        {% endfor %}
+        <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            <p>Username:</p>
+            <input type="text" name="username" placeholder="Enter your username" />
+            <p>Email:</p>
+            <input type="email" name="email" placeholder="Enter your email" />
+            <p>Password:</p>
+            <input type="password" name="password" placeholder="Enter your password" />
+            <p>Confirm Password:</p>
+            <input type="password" name="password2" placeholder="Confirm your password" />
+            <input type="submit" value="Sign Up" />
+        </form>
+    </div>
+</body>
+</html>

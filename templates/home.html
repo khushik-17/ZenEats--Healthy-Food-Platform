@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+    <title>Zeneats - Healthy Platform</title>
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="header">
+    <nav class="navbar">
+        <!-- Brand Logo -->
+        <a class="navbar-brand" href="home.html">
+            <img src="{% static 'images/logo.jpg' %}" class="custom-logo" alt="ZenEats Logo"> <span>ZenEats</span>
+        </a>
+
+        <!-- MENU -->
+        <div class="nav-menu">
+            <a href="{% url 'home' %}" class="nav-item">Home</a>
+        <a href="{% url 'recipes' %}" class="nav-item">Recipes</a>
+        <a href="{% url 'aboutus' %}" class="nav-item">About Us</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'bookmarked_recipes' %}" class="nav-item">Bookmarked Recipes</a>
+        <a href="{% url 'logout' %}" class="nav-item">Sign Out</a>
+        {% else %}
+        <a href="{% url 'login' %}" class="nav-item">Login</a>
+        {% endif %}
+        </div>
+    </nav>
+</header>
+
+<!-- Slider -->
+<div class="slider">
+    <div class="slides">
+        <!-- Slide 1 -->
+        <div class="slide">
+            <img src="{% static 'images/462927.jpg' %}" alt="Fresh Ingredients">
+            <div class="content">
+                <h1><b>Fresh Ingredients</b></h1>
+                <p>We believe in using the freshest and healthiest ingredients.</p>
+                <button onclick="window.location.href='/aboutus/'">Learn More</button>
+                <button onclick="window.location.href='/login/'">Sign In</button>
+            </div>            
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide">
+            <img src="{% static 'images/image bg1.jpg' %}" alt="Eco-Friendly Recipes">
+            <div class="content">
+                <h1><b>Fresh Ingredients</b></h1>
+                <p>We believe in using the freshest and healthiest ingredients.</p>
+                <button onclick="window.location.href='/aboutus/'">Learn More</button>
+                <button onclick="window.location.href='/login/'">Sign In</button>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide">
+            <img src="{% static 'images/lily-banse--YHSwy6uqvk-unsplash.jpg' %}" alt="Culinary Delight">
+            <div class="content">
+                <h1><b>Culinary Delight</b></h1>
+                <p>Creating moments of joy with every bite you take.</p>
+                <button onclick="window.location.href='/aboutus/'">Learn More</button>
+                <button onclick="window.location.href='/login/'">Sign In</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Welcome section -->
+<div class="Welcome">
+    <div class="row">
+        <div class="Welcome-photo">
+            <img src="{% static 'images/about.png' %}" class="img-responsive" alt="content-photo">
+        </div>
+        <div class="Welcome-content">
+            <h3>Welcome To Our <span>ZenEats</span></h3>
+            <p>Your go-to destination for discovering easy, healthy, and nutritious recipes! Our website offers a variety of fresh dishes from all around the world, designed to bring flavor and wellness to your plate.</p>
+            <p>Whether you're a seasoned cook or just starting your culinary journey, Zeneats provides step-by-step guidance to help you create meals at home in less time. Join us and explore a world of wholesome and delicious possibilities!</p>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="features">
+    <h2>Why Choose <span>ZenEats</span>?</h2>
+    <div class="features-row">
+        <div class="feature-item">
+            <img src="{% static 'images/fork-and-knife.png' %}" alt="Easy Recipes Icon">
+            <h3>Easy Recipes</h3>
+            <p>Simple, step-by-step recipes for every skill level.</p>
+        </div>
+        <div class="feature-item">
+            <img src="{% static 'images/apple-with-leaf.png' %}" alt="Nutrition Icon">
+            <h3>Nutritious Meals</h3>
+            <p>Healthy, balanced meals designed for your well-being.</p>
+        </div>
+        <div class="feature-item">
+            <img src="{% static 'images/globe.png' %}" alt="Global Cuisine Icon">
+            <h3>Global Flavors</h3>
+            <p>Explore a world of delicious recipes from different cultures.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Popular Recipes Section -->
+<div class="popular-recipes">
+    <h2>Popular Recipes</h2>
+    <div class="recipes-grid">
+        <div class="recipe-card">
+            <img src="{% static 'images/veggie_blast_rolls.webp' %}" alt="Recipe 1">
+            <h3>Veggie Blast Rolls</h3>
+            <p>Fresh Veggie Packed Rolls</p>
+            <a href="https://www.indianhealthyrecipes.com/baked-vegetable-spring-rolls-recipe-crusty-oven-baked-vegetable-spring-rolls/" class="btn">View Recipe</a>
+        </div>
+        <div class="recipe-card">
+            <img src="{% static 'images/spaghetti.avif' %}" alt="Recipe 2">
+            <h3>Spaghetti Bolognese</h3>
+            <p>A classic Italian pasta dish.</p>
+            <a href="https://www.recipetineats.com/spaghetti-bolognese/" class="btn">View Recipe</a>
+        </div>
+        <div class="recipe-card">
+            <img src="{% static 'images/avocado salad1.avif' %}" alt="Recipe 3">
+            <h3>Avocado Salad</h3>
+            <p>A quick, fresh salad perfect for any meal.</p>
+            <a href="https://www.vegrecipesofindia.com/avocado-salad/" class="btn">View Recipe</a>
+        </div>
+    </div>
+</div>
+
+<!-- Video Section -->
+<section class="video">
+    <div class="container pt-md-5 pt-4">
+        <div class="content-wrapper">
+            <div class="text-content">
+                <h3 class="title-style">DISCOVER THE JOY OF COOKING HEALTHY MEALS</h3>
+                <p>Connecting donors and recipients to save lives, one drop of blood at a time.</p>
+            </div>
+            <div class="video-section">
+                <div class="video-wrapper" onclick="playVideo()">
+                    <img src="{% static 'images/video.jpg' %}" alt="Video Placeholder" class="video-image">
+                    <span class="video-play-icon">
+                        <i class="fas fa-play"></i>
+                    </span>
+                </div>
+                <div id="video-container" class="hidden-video">
+                    <iframe id="video-frame" src="" allow="autoplay; fullscreen" frameborder="0"></iframe>
+                    <span class="close-video" onclick="closeVideo()">&#10006;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function playVideo() {
+        const videoContainer = document.getElementById("video-container");
+        const videoFrame = document.getElementById("video-frame");
+        const videoUrl = "https://player.vimeo.com/video/192089758";
+        videoFrame.src = videoUrl + "?autoplay=1";
+        videoContainer.style.display = "flex";
+    }
+
+    function closeVideo() {
+        const videoContainer = document.getElementById("video-container");
+        const videoFrame = document.getElementById("video-frame");
+        videoContainer.style.display = "none";
+        videoFrame.src = "";
+    }
+</script>
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-middle">
+            <h2>Subscribe to Our Recipe Newsletter</h2>
+            <p>Get the latest recipes straight to your inbox!</p>
+            <form class="subscription-form">
+                <input id="userEmail" type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>       
+        </div>
+        <div class="footer-right">
+            <h2>Connect with Us</h2>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f" target="_blank"></i></a>
+                <a href="https://x.com/"><i class="fab fa-twitter" target="_blank"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram" target="_blank"></i></a>
+                <a href="https://www.youtube.com/"><i class="fab fa-youtube" target="_blank"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Zeneats. All Rights Reserved.</p>
+            <p>Designed with ❤️ by Zeneats Team</p>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>

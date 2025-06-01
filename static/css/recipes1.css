@@ -1,0 +1,329 @@
+/* Universal Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+    /* background-color: rgba(203, 239, 229, 0.9); */
+    color: #333;
+    line-height: 1.6;
+    padding: 10px;
+}
+
+#d1{
+    background-color: #f4f4de;
+    color:black;
+}
+
+#d3 {
+    background-color: #f8f4f1;
+    color: #a35b0d;
+}
+
+#d4{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #f2f5ec;
+    color: #000000;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    
+}
+
+p.heading {
+    text-align: center;
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    /* color: #2c3e50; */
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(to right, green, #13f36951);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} 
+
+
+h2{
+    font-size: 2rem;
+    text-align: left;
+    color : black;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(to right, green, #13f36951);
+    -webkit-background-clip: text; /* Clip background to text */
+    -webkit-text-fill-color: transparent;
+    
+} 
+
+
+h3, p {
+    color: #000;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Main heading of page */
+.heading-elegant {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: center;
+    color: #333; /* Neutral, professional text color */
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #81ad35, #3b9f5e); /* Subtle gradient for sophistication */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 20px 0;
+  }
+  
+  .heading-elegant::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid rgba(120, 211, 17, 0.251); /* Thin, soft border */
+    border-radius: 8px; /* Subtle rounding for elegance */
+    padding: 5px; /* Creates space around the text */
+    z-index: -1; /* Send behind the text */
+  }
+  
+  .heading-elegant::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 1px solid rgba(8, 59, 6, 0.4); /* Lighter outer border for a polished effect */
+    border-radius: 12px; /* Complements inner border */
+    z-index: -2; /* Further behind */
+    filter: blur(1px); /* Subtle glow effect for depth */
+  }
+  
+/* Responsive Grid for Recipes */
+/* .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+    max-width: 1200px;
+    margin: auto;
+    justify-content: center;
+}
+
+/* Image and Overlay Effect */
+/* .container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+} */
+/*
+.image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+} */
+
+/* Ingredients Box Styling */
+.ingredients-box1 {                                 /* styling for ingredients of "saag paneer recipe" */
+    background-color: #e8f3d4;
+    padding: 20px;
+    padding-left: 90px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    border: 7px solid #5c8205; /* Olive green border */
+}
+.ingredients-box {
+    background-color: #ffffff;
+    padding: 20px;
+    padding-left: 90px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    border: 7px solid #5c8205; 
+}
+.need-list{
+    background-color: #ffffff;
+    padding: 20px;
+    padding-left: 10%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* shadow beside the content */
+    max-width: 600px;
+    margin: 20px auto;
+    border: 7px solid #eb884e; 
+}
+/* 
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(10, 10, 10, 0.75);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.container:hover .overlay {
+    opacity: 1;
+} */
+/* 
+
+/* List Styles */
+
+
+.instructions-list li, .ingredients-list li {
+    margin: 5px 0;
+    text-align: left;
+    list-style-position: inside;
+}
+
+.ingredients-list li , .incredients-list2 li, .instructions-list3 li{
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* instructions section styling of all recipes */
+.instructions-list li , .instructions-list2 li{
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 30px;
+    background: #d2cef64a;
+    border-left: 4px solid #efc4b8;
+    border-right: 4px solid #efc4b8;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.instructions-list3 li{
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 30px;
+    padding: 10px;
+    border-radius: 5px;
+}
+/* .id{
+    background: #d8f4d2;
+    border-left: 8px solid #130d0b;
+    border-right: 8px solid #130d0b;
+} */
+
+/* styling for d3 recipe for alternate color */
+.instructions-list3 li:nth-child(odd) {
+    background-color: #f8e4cd; /* Light color for odd items */
+}
+
+.instructions-list3 li:nth-child(even) {
+    background-color: #d9f8d9; /* Light green for even items */
+}
+
+
+
+.instructions-list4{
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 50px;
+    background: #effa774a;
+    border-radius: 5px;
+    border-color: #333;
+    border-radius: 5px;
+}
+
+
+/* ------------ RECIPE 8:  QUINOA SALAD RECIPE  --------------------- */
+
+.ingredients-list2{
+    /* background-color: #fef1e2; */
+    border-radius: 5px;
+    padding-left: 120px;
+    margin-top: 20px;
+}
+
+.toppings2{                                  /* the styling of the topings section*/
+    background-color:  #ddefd7;
+    border-radius: 5px;
+    padding-left: 70px;
+    margin-top: 20px;
+}
+
+/* Back Button */
+.back-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1em;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}
+
+/*
+/* Nutritional Value Section */
+.nutri-val {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 20px 0;
+    max-width: 400px; /* Limit the width for better readability */
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #28a745; /* Add a border with green color */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.nutri-val li {
+    padding: 10px 15px; /* Add spacing inside each list item */
+    font-size: 1.1rem; /* Slightly larger font for readability */
+    color: #495057; /* Neutral gray for text color */
+    border-bottom: 1px solid #ddd; /* Add separators between items */
+}
+
+.nutri-val li:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+.nutri-val li strong {
+    font-weight: bold;
+    color: #28a745; /* Highlighted color for key metrics */
+}
+
+/* Center the heading above the list */
+h2 {
+    text-align: center;
+    color: #007bff; /* Blue color for heading */
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+

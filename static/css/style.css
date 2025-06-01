@@ -1,0 +1,355 @@
+*{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+/* Header Section */
+.header {
+    background: linear-gradient(90deg, #FF4E50, #FC913A);
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 26px;
+    color: white;
+}
+
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 15px;
+}
+
+a.nav-item {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+a.nav-item:hover,
+a.nav-item.active {
+    background-color: #FF715B;
+}
+
+
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+}
+
+/* Recipe Cards Section */
+.recipes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.recipe-card {
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Recipe Image */
+.recipe-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.recipe-card:hover .overlay {
+    opacity: 1;
+}
+
+/* Text in Overlay */
+.text1 {
+    color: white;
+    font-size: 1.3rem;
+    font-family: 'Lucida Sans', sans-serif;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text2 {
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text2 a {
+    text-decoration: none;
+    color: #FFD700;
+    transition: color 0.3s ease;
+}
+
+.text2 a:hover {
+    color: #FFA500;
+}
+
+/* Bookmark Button */
+.bookmark-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 3;
+    padding: 5px;
+    transition: transform 0.2s ease;
+}
+
+.bookmark-btn:hover {
+    transform: scale(1.1);
+}
+
+.bookmark-icon {
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.bookmark-icon.bookmarked {
+    color: orange;
+    transform: scale(1.2);
+}
+
+/* Dialog Box */
+.dialog-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+    display: none;
+}
+
+.dialog-actions {
+    margin-top: 15px;
+}
+
+.dialog-actions button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.confirm-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Category Section */
+.category-section {
+    margin: 40px 0;
+    text-align: left;
+}
+
+.category-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.category-card {
+    width: calc(25% - 20px);
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.category-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+
+/* General Footer Styling */
+.footer {
+    background-color: #333; /* Dark background */
+    color: #fff; /* Text color */
+    text-align: center;
+    padding: 30px 20px; /* Adjust padding */
+    margin-top: 40px; /* Space from content above */
+    font-family: 'Arial', sans-serif; /* Modern font */
+    position: relative; /* Ensure proper stacking */
+    overflow: hidden; /* Contain floated elements */
+}
+
+/* Social Icons Section */
+.footer-right {
+    margin-bottom: 20px; /* Space between icons and footer text */
+}
+
+.footer-right h2 {
+    font-size: 1.8em; /* Adjusted for balance */
+    margin-bottom: 10px;
+    color: #ff5722; /* Accent color */
+    text-transform: uppercase; /* Style the text */
+    letter-spacing: 2px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center icons */
+    gap: 15px; /* Space between icons */
+    margin-top: 10px;
+}
+
+.social-icons a {
+    font-size: 1.8em; /* Icon size */
+    color: #fff; /* Default color */
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease; /* Hover animation */
+}
+
+.social-icons a:hover {
+    color: #ff5722; /* Hover color */
+    transform: scale(1.2); /* Zoom effect */
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    font-size: 0.9em; /* Standard text size */
+    color: #aaa; /* Subtle text color */
+    border-top: 1px solid #444; /* Separator */
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 5px 0; /* Space between lines */
+}
+
+.footer-bottom p:last-child {
+    font-style: italic; /* Style the design credit */
+    color: #ff5722; /* Accent color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px; /* Reduced padding */
+    }
+    .footer-right h2 {
+        font-size: 1.5em; /* Smaller font size for mobile */
+    }
+    .social-icons a {
+        font-size: 1.5em; /* Adjusted icon size */
+    }
+    .footer-bottom {
+        font-size: 0.8em; /* Smaller text */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-right h2 {
+        font-size: 1.2em; /* Further size adjustment */
+    }
+    .social-icons {
+        gap: 10px; /* Reduce spacing */
+    }
+}

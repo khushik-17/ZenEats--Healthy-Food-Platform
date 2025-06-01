@@ -1,0 +1,363 @@
+/* Includes styling of container, all IMAGES and OVERLAY EFFECT when Hover, with text styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#navbody{
+
+    overflow: auto;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+/* Grid Container for Recipes */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 100px 30px;
+    max-height: 600px;
+    margin:auto;
+}
+
+/* Container for each recipe item */
+.container { 
+    position: relative;
+    overflow: hidden;
+     width: 100%; 
+     margin-top: 50%;
+     margin: auto;
+     aspect-ratio: 1 / 1;
+    }
+
+/* Image Styling */
+.container .image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+}
+
+.container:hover .image {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Overlay Effect */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+}
+
+.container:hover .overlay {
+    opacity: 1;
+}
+
+    
+.text {
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    }
+.text2{
+    color: white;
+    font-size: 17px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* text styling of the recipe pages */
+/* General Body Styling */
+#s1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #FFE3E1;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    
+}
+
+#s2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #f9d9b5;
+    color: #a35b0d;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    
+}
+
+
+#s3{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #EDCDAF;
+    color: #eaa314;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    
+}
+
+#s4{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #fadac1;
+    color: #65480d;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    
+}
+
+#s5{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #f3d5d2;
+    color: #ea4c20;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+
+/* Heading Styles */
+h1, h2, h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #2c3e50;
+    margin-top: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+h1 {
+    font-size: 3.8em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #ff6f61, #bf4c4a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 2.2em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #f39c12;
+    display: inline-block;
+    padding-bottom: 5px;
+    color: #FF9494;
+}
+
+h3 {
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-top: 30px;
+    color: #1abc9c;
+}
+
+.heading3 {                         /* subheadings of recipe 3 */
+    font-size: 2.2em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #f39c12;
+    display: inline-block;
+    padding-bottom: 5px;
+    color: #5C4033;
+}
+
+.r2-maintopics {                    /* this is font style of recipe 2 "sugar free cake" main topics like dry ingredients */
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-top: 30px;
+    color: white;                    /* Set text color to white */
+    background-color: #f4aa4ae6;
+}
+/* Paragraph Styles */
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #555;
+    line-height: 1.8;
+    margin: 20px 0;
+    font-size: 1.1em;
+    text-align: justify;
+}
+
+/* Special Styling for First Paragraph */
+p:first-of-type {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #34495e;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* List Styles */
+ul, ol {
+    margin: 20px 40px;
+    font-size: 1.1em;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* 
+/* Additional Styling for Recipe Sections */
+.ingredients-list, .toppings-list, .instructions-list, .need-list,
+ .ingredients-list2, .topping2, .instructions-list2, 
+.ingredients-list3, .instructions-list3, .tips-lists3,
+.ingredients-list5 {
+    list-style-type: none;
+    padding-left: 0;
+} */
+
+.ingredients-list, .need-list {
+    margin-left: 20px;
+    margin-right: 750px;
+}
+
+.ingredients-list li::before,           /*  bullet points */
+.toppings-list li::before,
+.need-list li::before, 
+.ingredients-list2 li::before,
+.ingredients-list5 li::before{
+    content: "•";
+    color: #e74c3c;
+    margin-right: 10px;
+}
+
+.instructions-list li , .instructions-list2 li, .instructions-list3 li, .ingredients-list5  {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 30px;
+    background: #f9f9f9;
+    border-left: 9px solid #f45b0f;
+    border-right: 9px solid #f45b0f;;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+/* Boxed Sections */
+h2, h3 {
+    margin-top: 50px;
+    padding: 10px 0;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.instructions-list, .ingredients-list, .need-list {
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.toppings-list{
+    background-color:  #ecf0f1;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .back-button {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+}
+
+/* ------------ RECIPE 2: SUGAR FREE CAKE  --------------------- */
+
+.ingredients-list2{
+    background-color: #fef1e2;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.topping2{                                  /* the styling of the topings section*/
+    background-color:  #f0dfa8;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* ------------ RECIPE 3:  P-NUT ladoo --------------------- */
+
+.ingredients-list3{
+    background-color: #fef1e2;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.tips-list3{                                  /* the styling of the topings section*/
+    background-color:  #f5f0dd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* ------------ RECIPE 5:  chia seed pudding --------------------- */
+
+.ingredients-list5{
+    background-color: #fef1e2;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.topping5{                                  /* the styling of the topings section*/
+    background-color:  #eff0f7;
+    border-left: 9px solid #518bef;
+    border-right: 9px solid #4a52e3;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}

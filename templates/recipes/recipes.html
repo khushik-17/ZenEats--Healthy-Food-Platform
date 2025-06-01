@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Header Section -->
+<header class="header">
+    <nav class="navbar">
+        <!-- Brand Logo -->
+        <a class="navbar-brand" href="home.html">
+            <img src="{% static 'images/logo.jpg' %}" class="custom-logo" alt="ZenEats Logo"> <span>ZenEats</span>
+        </a>
+
+        <!-- MENU -->
+        <div class="nav-menu">
+            <a href="{% url 'home' %}" class="nav-item">Home</a>
+        <a href="{% url 'recipes' %}" class="nav-item">Recipes</a>
+        <a href="{% url 'aboutus' %}" class="nav-item">About Us</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'bookmarked_recipes' %}" class="nav-item">Bookmarked Recipes</a>
+        <a href="{% url 'logout' %}" class="nav-item">Sign Out</a>
+        {% else %}
+        <a href="{% url 'login' %}" class="nav-item">Login</a>
+        {% endif %}
+        </div>
+    </nav>
+</header>
+    <div class="container">
+        <h1 class="page-title">Recipes</h1>
+        <div class="categories">
+            {% for category in categories %}
+            <div class="category-section">
+                <h2 class="category-title">{{ category.name }}</h2>
+                <div class="recipes">
+                    {% for recipe in category.recipes.all %}  <!-- Use .all to ensure we are iterating over a queryset -->
+                    <div class="recipe-card" id="recipe-{{ recipe.id }}">
+                        <a href="{% url 'static_recipe_detail' slug=recipe.slug %}" class="recipe-link">
+                            <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
+                            <!-- Overlay -->
+                            <div class="overlay">
+                                <div class="recipe-info">
+                                    <h2 class="text1">{{ recipe.title }}</h2>
+                                    <p class="text2">{{ recipe.description }}</p>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- Bookmark Button -->
+                        <button class="bookmark-btn" data-recipe-id="{{ recipe.id }}">
+                            <i class="{% if recipe.id in bookmarked_recipe_ids %}fas{% else %}far{% endif %} fa-bookmark bookmark-icon" id="bookmark-icon-{{ recipe.id }}"></i>
+                        </button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Dialog Box -->
+    <div id="bookmark-dialog" class="dialog-box">
+        <p id="dialog-text"></p>
+        <div class="dialog-actions">
+            <button id="confirm-btn" class="confirm-btn">Yes</button>
+            <button id="cancel-btn" class="cancel-btn">No</button>
+        </div>
+    </div>
+
+   <!-- Footer Section -->
+   <footer class="footer">
+    <div class="footer-right">
+        <h2>Connect with Us</h2>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 ZenEats. All Rights Reserved.</p>
+        <p>Designed with ❤️ by ZenEats Team</p>
+    </div>
+    </footer>
+
+
+<script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

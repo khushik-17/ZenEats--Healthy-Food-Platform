@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/aboutus.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="{% static 'js/aboutus.js' %}"></script>
+    <title>About Us - ZenEats</title>
+</head>
+<body>
+
+<!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <!-- Brand Logo -->
+            <a class="navbar-brand" href="index.html">
+                <img src="{% static 'images/logo.jpg' %}" class="custom-logo" alt="ZenEats Logo"> <span>ZenEats</span>
+            </a>
+
+            <!-- MENU -->
+            <div class="nav-menu">
+                <a href="{% url 'home' %}" class="nav-item">Home</a>
+        <a href="{% url 'recipes' %}" class="nav-item">Recipes</a>
+        <a href="{% url 'aboutus' %}" class="nav-item">About Us</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'bookmarked_recipes' %}" class="nav-item">Bookmarked Recipes</a>
+        <a href="{% url 'logout' %}" class="nav-item">Sign Out</a>
+        {% else %}
+        <a href="{% url 'login' %}" class="nav-item">Login</a>
+        {% endif %}
+            </div>
+        </nav>
+    </header>
+
+
+<!-- Breadcrumbs -->
+     <div class="breadcrumbs">
+        <a href="home.html">Home</a> &gt; <span>About Us</span>
+    </div>
+
+
+<!-- Main Content -->
+    <main class="main-content">
+        <h2>Who We Are!!!</h2>
+        <p><strong>ZenEats</strong> is not just a recipe site; it’s a lifestyle. We combine fun, flavor, and wellness to inspire the next generation of food enthusiasts. Every dish is crafted to satisfy your taste buds without compromising on health.</p>
+    </main>
+
+
+<!-- Transition -->
+    <div class="slideshowcontainer">
+        <div class="fade">
+          <img src="{% static 'images/T1.jpg' %}" alt="Image 1">
+        </div>
+        <div class="fade">
+          <img src="{% static 'images/T4.jpg' %}" alt="Image 2">
+        </div>
+    </div>
+<br><br>
+
+
+<!-- Our journey -->
+    <div class="about-us-section">
+        <h2>About Us</h2>
+        <p>
+            Healthy Eats was inspired by the Gen Z passion for bold flavors, healthy living, and sustainability. 
+            We’re here to redefine healthy eating with a modern twist, offering nutritious meals that are as vibrant as they are delicious. 
+            Join us in building a community where wellness meets creativity.
+        </p>
+        <div class="about-us-features">
+            <div class="feature-item">
+                <img src="{% static 'images/tl.jpg' %}" alt="Locally Sourced">
+                <h3>Locally Sourced</h3>
+                <p>Fresh, eco-friendly ingredients from trusted local farmers.</p>
+            </div>
+            <div class="feature-item">
+                <img src="{% static 'images/mf.jpg' %}" alt="Modern Fusion">
+                <h3>Modern Fusion</h3>
+                <p>Innovative recipes blending global tastes with modern trends.</p>
+            </div>
+         </div>
+    </div>
+  <br>
+
+
+<!-- features section -->
+    <h1>Here are some features</h1>
+    <div class="features">
+        <div class="feature">
+            <img src="{% static 'images/box1.jpg' %}" alt="Healthy Food">
+            <h3>Healthy Recipes</h3>
+            <p>Discover recipes that are as good for your body as they are for your soul.</p>
+        </div>
+        <div class="feature">
+            <img src="{% static 'images/box3.jpg' %}" alt="Quick Recipes">
+            <h3>Quick Meals</h3>
+            <p>Short on time? We’ve got you covered with easy-to-make, delicious recipes.</p>
+        </div>
+        <div class="feature">
+            <img src="{% static 'images/box2.jpg' %}" alt="Fusion Food">
+            <h3>Fusion Flavors</h3>
+            <p>Enjoy a blend of global cuisines with a healthy twist.</p>
+        </div>
+    </div>
+    
+
+<!-- Mission Section -->
+    <section class="mission-section">
+        <h2>Our Mission</h2>
+        <blockquote>
+            “To make healthy eating cool, fun, and accessible for Gen Z and beyond.”
+        </blockquote>
+    </section>
+    <br>
+
+
+<!-- Meet the Team -->
+    <section class="team-section">
+        <h2>Meet the ZenEats Trio!!</h2>
+        <div class="team">
+            <div class="team-member">
+                <img src="{% static 'images/k1.jpg' %}" alt="Saanvi Shinde">
+                <h3>Khushi Karelia</h3>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'images/d1.jpg' %}" alt="Deepti Gayakwad">
+                <h3>Deepti Gayakwad</h3>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'images/s1.jpg' %}" alt="Khushi Karelia">
+                <h3>Saanvi Shinde</h3>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-right">
+            <h2>Connect with Us</h2>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f" target="_blank"></i></a>
+                <a href="https://x.com/"><i class="fab fa-twitter" target="_blank"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram" target="_blank"></i></a>
+                <a href="https://www.youtube.com/"><i class="fab fa-youtube" target="_blank"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Zeneats. All Rights Reserved.</p>
+            <p>Designed with ❤️ by Zeneats Team</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
